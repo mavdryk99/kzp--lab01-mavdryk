@@ -67,6 +67,10 @@ public final class Main {
                 errors.add("Рядок %d: очікується 5 полів".formatted(i + 1));
                 continue;
             }
+            if (fields[0].isBlank() || fields[1].isBlank()) {
+                errors.add("Рядок %d: порожня назва команди".formatted(i + 1));
+                continue; 
+            }
 
             try {
                 // Перетворення тексту на числа; хибне поле кине NumberFormatException.
