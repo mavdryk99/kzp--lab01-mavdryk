@@ -94,7 +94,7 @@ public final class Main {
         int longestStay = 0;
         for (Booking booking : bookings) {
             totalNights += booking.getNights();
-            totalRevenue += booking.getNights() * booking.getNightlyRate();
+            totalRevenue += booking.stayCost();
             longestStay = Math.max(longestStay, booking.getNights());
         }
         return new BookingSummary(bookings.size(), totalNights, totalRevenue, longestStay);
